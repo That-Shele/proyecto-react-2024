@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 import Cripto from "./Cripto";
-import "./App.css"
+import "./Cuadricula.css"
 
-function App() {
+function Cuadricula() {
   const API_URL = import.meta.env.VITE_API_URL
 
   const [criptos, setCriptos] = useState([])
@@ -26,7 +26,8 @@ function App() {
       <div className="cripto-container">
         {criptos.map(({id, name, priceUsd, symbol, changePercent24Hr}) => (
           <Cripto 
-            key={id} 
+            key={id}
+            id={id} 
             name={name} 
             priceUsd={priceUsd} 
             symbol={symbol} 
@@ -37,4 +38,4 @@ function App() {
   )
 }
 
-export default App
+export default Cuadricula
